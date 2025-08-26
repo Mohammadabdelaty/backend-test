@@ -1,0 +1,23 @@
+{
+  "name": "backend-test",
+  "version": "1.0.0",
+  "description": "Welcome to NodeJs note This repo is for understanding API, backend with mostly used node js, and it's for getting comfortable with deplying projects in kuberentes or dokcer, and sepcefically troubleshooting issues after something like helm installations and things crash suddenly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammadabdelaty/backend-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohammadabdelaty/backend-test/issues"
+  },
+  "homepage": "https://github.com/Mohammadabdelaty/backend-test#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
