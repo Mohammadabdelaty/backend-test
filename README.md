@@ -18,3 +18,13 @@ npm install express
 It creates `package-lock.json`, modules version will be stored in here, and `node-modules` dir with the modules.
 
 # Create your app
+write your app as `app.js` 
+then run the app as follows to start your server:
+```bash
+node app.js
+```
+
+Issue could be in restarting the server each time you update your code, it could be resolved with `nodemon` as follows:
+```bash
+npx nodemon app.js
+```
