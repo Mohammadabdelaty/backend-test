@@ -28,7 +28,7 @@ app.post("/sum/:num1/:num2", (req, res) => { // add Path params to request in th
 
 // This endpoint to update user information with his query and body params using PUT request
 // -------------------------------------------------------------------------------------------
-app.put("/put", (req, res) => { // When user request hello
+app.put("/gettext", (req, res) => { // When user request hello
     console.log(req.body); // requires app.use express.json // Body parameters
     // console.log(req.body.name);
     console.log(req.query); // ?age=30 >> Query paramters
@@ -39,10 +39,22 @@ app.put("/put", (req, res) => { // When user request hello
         "\nYour Age from query is: " + JSON.stringify(req.query.age));
 });
 
+app.put("/getjson", (req, res) => { // When user request hello
+    console.log(req.body); // requires app.use express.json // Body parameters
+    // console.log(req.body.name);
+    console.log(req.query); // ?age=30 >> Query paramters
+    res.json(
+        {
+            name: req.body.name,
+            age: req.query.age
+        }
+    );
+});
 
-//
-app.delete("/del", (req, res) => { // When user request hello
-    res.send("Delete page!"); // send this a response
+
+// This endpoint is to send back data in json with delete request
+app.get("/maintenance", (req, res) => { // When user request hello
+    res.sendFile(__dirname + "/views/maintnance.html");
 });
 
 

@@ -28,3 +28,10 @@ Issue could be in restarting the server each time you update your code, it could
 ```bash
 npx nodemon app.js
 ```
+
+# Endpoint
+In `app.js` you can see different types of responses user can get
+It could be some calculations, also it could be json, html, etc.. .
+
+# Request
+GET, POST, PUT, DELETE, PUSH
