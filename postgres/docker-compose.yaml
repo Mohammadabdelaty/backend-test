@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name:     
+    restart: always
+    environment:
+      POSTGRES_USER: ${USERNAME}
+      POSTGRES_PASSWORD: ${USER_PASSOWRD}
+      POSTGRES_DB: ${DBNAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file: .env
+
+  pgadmin:
+    image: dpage/pgadmin4:latest # Or a specific version
+    container_name: pgadmin_dashboard
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL} # pgAdmin login email
+      PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASSWORD} # pgAdmin login password
+    ports:
+      - "8080:80" # Expose pgAdmin web interface
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+    driver: local
